@@ -10,8 +10,12 @@ Do not duplicate the full router here.
 
 ## Path alias
 
-- `@24vlh` => Windows `W:/public_html/24vlh`
-- `@24vlh` => WSL `/mnt/w/public_html/24vlh`
+Source of truth: `@24vlh/agents/path-roots.json`.
+
+- `@24vlh` => WSL primary `/public_html/24vlh`
+- `@24vlh` => Windows fallback `\\wsl.localhost\CentOS10\public_html\24vlh`
+- `@24vlh` => legacy WSL fallback `/mnt/w/public_html/24vlh`
+- `@24vlh` => legacy Windows fallback `W:/public_html/24vlh`
 
 ## Project root reference
 
@@ -20,7 +24,7 @@ Do not duplicate the full router here.
 ## Command execution policy (WSL-first, mandatory)
 
 - Run commands through WSL shell:
-  - `wsl sh -lc "cd /mnt/w/public_html/24vlh/ValidareSemnaturaAvansata-eCI && <command>"`
+  - `wsl sh -lc "cd /public_html/24vlh/ValidareSemnaturaAvansata-eCI && <command>"`
 
 ## Routing
 

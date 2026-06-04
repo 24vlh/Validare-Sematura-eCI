@@ -2,8 +2,12 @@
 
 ## Path alias
 
-- `@24vlh` => Windows `W:/public_html/24vlh`
-- `@24vlh` => WSL `/mnt/w/public_html/24vlh`
+Source of truth: `@24vlh/agents/path-roots.json`.
+
+- `@24vlh` => WSL primary `/public_html/24vlh`
+- `@24vlh` => Windows fallback `\\wsl.localhost\CentOS10\public_html\24vlh`
+- `@24vlh` => legacy WSL fallback `/mnt/w/public_html/24vlh`
+- `@24vlh` => legacy Windows fallback `W:/public_html/24vlh`
 
 Build and release notes for `Validare Semnătură Avansată cu eCI` (`ValidareSemnaturaAvansata-eCI`).
 
@@ -149,7 +153,7 @@ py --version
 Project-local workspace:
 
 ```powershell
-cd W:\public_html\24vlh\ValidareSemnaturaAvansata-eCI
+cd \\wsl.localhost\CentOS10\public_html\24vlh\ValidareSemnaturaAvansata-eCI
 ```
 
 Fresh Windows machine example:
@@ -161,7 +165,7 @@ cd C:\ValidareSemnaturaAvansata-eCI
 WSL:
 
 ```sh
-cd /mnt/w/public_html/24vlh/ValidareSemnaturaAvansata-eCI
+cd /public_html/24vlh/ValidareSemnaturaAvansata-eCI
 ```
 
 ---
@@ -268,7 +272,7 @@ Important:
 - If you are launching from a Windows terminal and want to follow the exact repo policy, use:
 
 ```powershell
-wsl sh -lc "cd /mnt/w/public_html/24vlh/ValidareSemnaturaAvansata-eCI && ./scripts/build-release.sh --target all"
+wsl sh -lc "cd /public_html/24vlh/ValidareSemnaturaAvansata-eCI && ./scripts/build-release.sh --target all"
 ```
 
 ---
